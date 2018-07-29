@@ -2,7 +2,7 @@
 
 <section id="indexBlog">
     <article>
-        <p><img src="contenu/images/admin.jpg"></p>
+        <p><img src="assets/images/admin.jpg"></p>
         <p>
             Bonjour à tout mes fans, vous êtes ici sur mon nouveau Blog que j'ai décider d'ouvrir afin de vous faire découvrir mon nouveau roman <span>"Billet simple pour l'Alaska"</span>.<br>
             Je publierais ce roman par chapitre directement sur ce blog vous faisant ainsi découvrir celui-ci en avant première.<br>
