@@ -31,8 +31,7 @@ class View
     // Méthode qui génere le fichier vue et renvoie le résultat
     private function generateFile($file, $data)
     {
-        if(file_exists($file))
-        {
+        if (file_exists($file)) {
             // Les élements du tableau $data seront accessible dans la vue
             extract($data);
 
@@ -42,19 +41,30 @@ class View
             require $file;
             // Arrête et renvoie la temporisation
             return ob_get_clean();
-        }
-        else {
+        } else {
             throw new Exception('Fichier ' . $file . ' introuvale');
         }
     }
 
     // Setter du titre
-    public function setTitle($title) { $this->_title = $title; }
+    public function setTitle($title)
+    {
+        $this->_title = $title;
+    }
     // Getter du titre
-    public function title() { return $this->_title; }
+    public function title()
+    {
+        return $this->_title;
+    }
 
     // Setter file
-    public function setFile($file) { $this->_file = $file; }
+    public function setFile($file)
+    {
+        $this->_file = $file;
+    }
     // Getter file
-    public function file() { return $this->_file; }
+    public function file()
+    {
+        return $this->_file;
+    }
 }

@@ -18,7 +18,7 @@
 
             <?php
             // Boucle d'affichage des chapitres
-            for($i = 0; $i < count($tickets); $i++) :
+            for ($i = 0; $i < count($tickets); $i++) :
             ?>
                 <div class="ticket">
 

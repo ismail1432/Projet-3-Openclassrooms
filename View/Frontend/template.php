@@ -24,21 +24,16 @@
             <ul id="oneLevel">
                 <li><span class="fa fa-home"></span><a href="index.php" title="Retourner à l'accueil du blog">Accueil</a></li>
                 <ul id="secondLevel">
-                <?php if(isset($_SESSION['emailAdress']))
-                {
-                    if($_SESSION['statusMember'] == 'administrateur')
-                    {
-                    ?>
+                <?php if (isset($_SESSION['emailAdress'])) {
+    if ($_SESSION['statusMember'] == 'administrateur') {
+        ?>
                         <li><a href="admin.php" title="Accéder à l'espace administration du blog">Administrer le Blog</a></li> <!-- Lien vers l'administration du site -->
                     <?php
-                    }
-                    ?>
+    } ?>
                         <li><a href="index.php?action=deconnect" title="Se déconnecter">Deconnexion</a></li> <!-- Lien de deconnexion -->
                     <?php
-                }
-                else
-                {
-                ?>
+} else {
+                    ?>
                     <li><a href="index.php?action=connection" title="Connecter vous">Se connecter</a></li> <!-- Lien de connexion -->
                     <li><a href="index.php?action=registration" title="Créer un compte">Créer un compte</a></li> <!-- Lien vers la création d'un compte -->
                 <?php

@@ -6,9 +6,11 @@
 
         <p>Ajouté le : <span class="strong"><?= $ticket->dateTimeAdd(); ?></span></p> <!-- Date et heure d'ajout du chapitre -->
 
-    <?php if($ticket->dateTimeLastModified() != NULL) { ?> <!-- Si le chapitre à subit une modification -->
+    <?php if ($ticket->dateTimeLastModified() != null) {
+    ?> <!-- Si le chapitre à subit une modification -->
         <p>Modifié le : <span class="strong"><?= $ticket->dateTimeLastModified(); ?></span></p> <!-- Date et heure de modification du chapitre -->
-    <?php } ?>
+    <?php
+} ?>
 
         <h1 class="titleTicket"><?= $ticket->title(); ?></h1> <!-- Titre du chapitre -->
 
@@ -24,25 +26,20 @@
         <h1>Commentaires du chapitre :</h1>
 
         <?php
-        if(count($commentsTicket) != 0)
-        {
-        ?>
+        if (count($commentsTicket) != 0) {
+            ?>
             <div id="listComments">
-                <?php for($i = 0; $i < count($commentsTicket); $i++) : ?>
+                <?php for ($i = 0; $i < count($commentsTicket); $i++) : ?>
                     <?php
-                        if($commentsTicket[$i]->alertComment() == 1)
-                        {
-                    ?>
+                        if ($commentsTicket[$i]->alertComment() == 1) {
+                            ?>
                         <div class="commentSignal">
                     <?php
-                        }
-                        else
-                        {
-                    ?>
+                        } else {
+                            ?>
                         <div class="comment">
                     <?php
-                        }
-                    ?>
+                        } ?>
 
                         <p class="headerComment">
                             <p>Poster par : <span class="strong"><?= $commentsTicket[$i]->mailMember(); ?></span></p>
@@ -58,19 +55,15 @@
                                 <input type="hidden" name="idComment" value="<?= $commentsTicket[$i]->idComment(); ?>">
                                 <input type="hidden" name="reportComment" value="reportComment">
                                 <?php
-                                if($commentsTicket[$i]->alertComment() == 1)
-                                {
-                                ?>
+                                if ($commentsTicket[$i]->alertComment() == 1) {
+                                    ?>
                                     <input type="submit" class="buttonBlog" value="Commentaire signaler" disabled>
                                 <?php
-                                }
-                                else
-                                {
-                                ?>
+                                } else {
+                                    ?>
                                     <input type="submit" class="buttonBlog" value="Signaler le commentaire">
                                 <?php
-                                }
-                                ?>
+                                } ?>
 
                             </p>
                         </form>
@@ -80,9 +73,7 @@
                 <?php endfor; ?>
             </div>
         <?php
-        }
-        else
-        {
+        } else {
             echo 'Aucun commentaire n\'a était poster sur ce chapitre';
         }
         ?>
@@ -96,24 +87,23 @@
 
         <form action="index.php?action=ticket&id=<?= $_GET['id']; ?>" method="post">
 
-            <?php if(isset($_SESSION['errorPostComment'])) { echo '<p class="errorBlog">' . $_SESSION['errorPostComment'] . '</p>'; } ?>
+            <?php if (isset($_SESSION['errorPostComment'])) {
+            echo '<p class="errorBlog">' . $_SESSION['errorPostComment'] . '</p>';
+        } ?>
 
             <div id="fieldsSeized">
 
             <?php
-            if(isset($_SESSION['emailAdress']))
-            {
-            ?>
+            if (isset($_SESSION['emailAdress'])) {
+                ?>
                 <p>
                     <label for="emailAdress">Votre adresse E-mail :</label>
                     <input type="email" name="emailAdress" id="emailAdress" value="<?= $_SESSION['emailAdress']; ?>" disabled>
                     <input type="hidden" name="emailAdress" id="emailAdress" value="<?= $_SESSION['emailAdress']; ?>"> <!-- Champ qui sera transmis -->
                 </p>
             <?php
-            }
-            else
-            {
-            ?>
+            } else {
+                ?>
                 <p>
                     <label for="emailAdress">Votre adresse E-mail :</label>
                     <input type="email" name="emailAdress" id="emailAdress">

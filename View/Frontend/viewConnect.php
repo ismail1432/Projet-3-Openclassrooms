@@ -1,6 +1,5 @@
 <?php
-if(isset($_SESSION['idMember']))
-{
+if (isset($_SESSION['idMember'])) {
     // Redirige le membre vers index.php
     header('Location:index.php');
 }
@@ -11,7 +10,9 @@ $this->setTitle('Page de connexion - Billet simple pour l\'Alaska'); ?>
 
     <form method="post" action="index.php?action=connection">
 
-        <?php if(isset($_SESSION['errorConnect'])) { echo '<p class="errorBlog">' . $_SESSION['errorConnect'] . '</p>'; } ?>
+        <?php if (isset($_SESSION['errorConnect'])) {
+    echo '<p class="errorBlog">' . $_SESSION['errorConnect'] . '</p>';
+} ?>
 
         <p>
             <label for="emailAdress">Votre adresse E-Mail :</label><br>
