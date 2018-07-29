@@ -3,10 +3,10 @@
     <head>
         <meta charset="UTF-8"> <!-- Balise meta -->
         <meta name="viewport" content="initial-scale=1, user-scalable=no">
-        <link rel="icon" type="image/png" href="Contenu/images/favicon.png">
+        <link rel="icon" type="image/png" href="assets/images/favicon.png">
         <link href="https://fonts.googleapis.com/css?family=Pattaya" rel="stylesheet"> <!-- Police d'écriture "Pattaya" -->
         <link href="https://fonts.googleapis.com/css?family=El+Messiri" rel="stylesheet"> <!-- Police d'écriture "El Messiri" -->
-        <link rel="stylesheet" href="contenu/font-awesome/css/font-awesome.min.css"> <!-- Font Awesome -->
+        <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css"> <!-- Font Awesome -->
         <link rel="stylesheet" href="assets/css/style.css"> <!-- Feuille de style général -->
         <link rel="stylesheet" href="assets/css/styleFrontend.css"> <!-- Feuille de style du Frontend -->
         <!-- Titre du site définit par la variable $titrePage -->
