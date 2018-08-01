@@ -5,9 +5,8 @@ Créez un blog pour un écrivain.
 
 ## Installation
 
-- Importez la base de donnée blog.sql qui est dans le dossier config 
-- modifier le fichier config.ini dans le dossier config avec vos paramètre de connexion à la base de donnée
-- pour accéder à la partie admin utiliser le pseudo: "forteroche" et le mot de pass: "password"
+- Importez la base de donnée "BDD.sql" qui est dans le dossier "BDD" 
+- Modifiez le fichier "Manager.php" présent dans le dossier "Model" avec vos paramètres de connexion à la base de donnée
 
 ## Énoncé
 
