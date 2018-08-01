@@ -3,10 +3,10 @@ class Manager
 {
     // identifiants connexion WAMP
     // Constante de connexion
-    const HOST_NAME = 'localhost';
-    const DATABASE = 'blog_cdpm';
-    const USER_NAME = 'root';
-    const PASSWORD = '1w00YRWa';
+    const HOST_NAME = 'HostDeLaDB';
+    const DATABASE = 'NomDeVotreBaseDeDonnee';
+    const USER_NAME = 'VotreNomDutilisateur';
+    const PASSWORD = 'VotreMotDePasse';
 
     // Méthode de connexion à la BDD
     protected function bddConnect()
