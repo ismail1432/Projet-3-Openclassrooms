@@ -4,8 +4,8 @@
     <article>
         <p><img src="assets/images/admin.jpg"></p>
         <p>
-            Bonjour à tout mes fans, vous êtes ici sur mon nouveau Blog que j'ai décider d'ouvrir afin de vous faire découvrir mon nouveau roman <span>"Billet simple pour l'Alaska"</span>.<br>
-            Je publierais ce roman par chapitre directement sur ce blog vous faisant ainsi découvrir celui-ci en avant première.<br>
+            Bonjour à tous mes fans, vous êtes ici sur mon nouveau Blog que j'ai décidé d'ouvrir afin de vous faire découvrir mon nouveau roman <span>"Billet simple pour l'Alaska"</span>.<br>
+            Je publierai ce roman par chapitre directement sur ce blog vous faisant ainsi découvrir celui-ci en avant première.<br>
             <span>Merci à tous et bonne lecture.</span>
         </p>
     </article>
