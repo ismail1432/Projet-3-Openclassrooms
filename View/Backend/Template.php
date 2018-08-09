@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8"> <!-- Balise meta -->
         <meta name="viewport" content="initial-scale=1, user-scalable=no">
-        <link rel="icon" type="image/png" href="assets/images/favicon.png">
+        <link rel="icon" type="image/ico" href="assets/images/favicon.ico">
         <link href="https://fonts.googleapis.com/css?family=Pattaya" rel="stylesheet"> <!-- Police d'écriture "Pattaya" -->
         <link href="https://fonts.googleapis.com/css?family=El+Messiri" rel="stylesheet"> <!-- Police d'écriture "El Messiri" -->
         <link rel="stylesheet" href="assets/css/style.css"> <!-- Feuille de style Géneral -->
@@ -15,7 +15,7 @@
     <body>
 
         <header>
-            <p><img src="assets/images/logo.png"></p>
+            <p><img src="assets/images/logo.svg"></p>
             <h1>Billet simple pour l'Alaska</h1>
         </header>
 
