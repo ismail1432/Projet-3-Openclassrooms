@@ -1,12 +1,14 @@
 <?php
+require_once('./config-dist.php');
+require_once('./Model/Manager.php');
 // Manager de la class Ticket
-class TicketsManager extends Manager
+class TicketsManager
 {
     // Méthode d'ajout d'un chapitre
     public function add($ticket)
     {
         // Connexion à la BDD
-        $bdd = parent::bddConnect();
+        $bdd = bdd_connect();
 
         // Prépare la requete d'ajout d'un nouveau chapitre
         $request = $bdd->prepare('INSERT INTO tickets(title, content, dateTimeAdd) VALUES(:title, :content, :dateTimeAdd)');
@@ -22,7 +24,7 @@ class TicketsManager extends Manager
     public function update($ticket)
     {
         // Connexion à la BDD
-        $bdd = parent::bddConnect();
+        $bdd = bdd_connect();
 
         // Prépare la requete de modification d'un chapitre
         $request = $bdd->prepare('UPDATE tickets SET title = :newTitle, content = :newContent, dateTimeLastModified = :newDateTimeModified WHERE id = :idTicket');
@@ -39,7 +41,7 @@ class TicketsManager extends Manager
     public function delete($id)
     {
         // Connexion à la BDD
-        $bdd = parent::bddConnect();
+        $bdd = bdd_connect();
 
         // Prépare la requéte pour la suppresion d'un chapitre
         $request = $bdd->prepare('DELETE FROM tickets WHERE id = :idTicket');
@@ -53,7 +55,7 @@ class TicketsManager extends Manager
     public function getTicket($id)
     {
         // Connexion à la BDD
-        $bdd = parent::bddConnect();
+        $bdd = bdd_connect();
 
         // Prépare la requéte de récupération du chapitre demander
         $request = $bdd->prepare('SELECT title, content, DATE_FORMAT(dateTimeAdd, \'%d-%m-%Y à %Hh%i\') AS dateTimeAdd, DATE_FORMAT(dateTimeLastModified, \'%d-%m-%Y à %Hh%i\') AS dateTimeLastModified FROM tickets WHERE id = :id');
@@ -73,7 +75,7 @@ class TicketsManager extends Manager
     public function getListTickets()
     {
         // Connexion à la BDD
-        $bdd = parent::bddConnect();
+        $bdd = bdd_connect();
 
         // Retourne la liste de tous les chapitres
         $request = $bdd->query('SELECT id, title, content, DATE_FORMAT(dateTimeAdd, \'%d-%m-%Y à %Hh%i\') AS dateTimeAdd FROM tickets ORDER BY dateTimeAdd DESC') or die(print_r($request->errorInfo(), true)); // or die permet d'afficher les erreurs de MySql

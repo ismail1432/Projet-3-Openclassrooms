@@ -1,12 +1,14 @@
 <?php
+require_once('./config-dist.php');
+require_once('./Model/Manager.php');
 // Manager de la classe Comment
-class CommentsManager extends Manager
+class CommentsManager
 {
     // Méthode d'ajout d'un commentaire
     public function add($comment)
     {
         // Connexion à la BDD
-        $bdd = parent::bddConnect();
+        $bdd = bdd_connect();
 
         // Prépare la requète d'ajout d'un nouveau commentaire
         $request = $bdd->prepare('INSERT INTO comments(content, dateTimeAdd, idTicket, idMember, alert) VALUES(:content, :dateTimeAdd, :idTicket, :idMember, :alert)');
@@ -23,7 +25,7 @@ class CommentsManager extends Manager
     public function delete($id)
     {
         // Connexion à la BDD
-        $bdd = parent::bddConnect();
+        $bdd = bdd_connect();
 
         // Prépare la requète de suppression d'un commentaire
         $request = $bdd->prepare('DELETE FROM comments WHERE id = :id');
@@ -36,7 +38,7 @@ class CommentsManager extends Manager
     public function deleteCommentTicket($idTicket)
     {
         // Connexion à la BDD
-        $bdd = parent::bddConnect();
+        $bdd = bdd_connect();
 
         // Prépare la requète de suppression d'un commentaire
         $request = $bdd->prepare('DELETE FROM comments WHERE idTicket = :idTicket');
@@ -49,7 +51,7 @@ class CommentsManager extends Manager
     public function getListCommentsAlert()
     {
         // Connexion à la BDD
-        $bdd = parent::bddConnect();
+        $bdd = bdd_connect();
 
         $request = $bdd->query('SELECT com.id idComment, DATE_FORMAT(com.dateTimeAdd, \'%d-%m-%Y à %Hh%i\') AS dateTimeAddComment, com.content contentComment, com.alert alertComment, m.emailAdress mailMember, t.title titleTicket, com.idTicket idTicket FROM comments com INNER JOIN members m ON com.idMember = m.id INNER JOIN tickets t ON com.idTicket = t.id WHERE com.alert = TRUE');
 
@@ -67,7 +69,7 @@ class CommentsManager extends Manager
     public function getListCommentsTicket($id)
     {
         // Connexion à la BDD
-        $bdd = parent::bddConnect();
+        $bdd = bdd_connect();
 
         // Prépare la requéte de récupération des commentaires, avec une jointure vers la table tickets et members
         $request = $bdd->prepare('SELECT com.id idComment, DATE_FORMAT(com.dateTimeAdd, \'%d-%m-%Y à %Hh%i\') AS dateTimeAddComment, com.content contentComment, com.alert alertComment, m.emailAdress mailMember, t.title titleTicket FROM comments com INNER JOIN members m ON com.idMember = m.id INNER JOIN tickets t ON com.idTicket = t.id WHERE com.idTicket = :idTicket ORDER BY com.alert DESC, com.dateTimeAdd DESC');
@@ -90,7 +92,7 @@ class CommentsManager extends Manager
     public function getNbComments($id)
     {
         // Connexion à la BDD
-        $bdd = parent::bddConnect();
+        $bdd = bdd_connect();
 
         $request = $bdd->prepare('SELECT COUNT(*) AS nbComments FROM comments WHERE idTicket = :idTicket');
         $request->bindValue(':idTicket', $id, PDO::PARAM_INT);
@@ -108,7 +110,7 @@ class CommentsManager extends Manager
     public function reportComment($id)
     {
         // Connexion à la BDD
-        $bdd = parent::bddConnect();
+        $bdd = bdd_connect();
 
         $request = $bdd->prepare('UPDATE comments SET alert = TRUE WHERE id = :id');
         $request->bindValue(':id', $id, PDO::PARAM_INT);
@@ -120,7 +122,7 @@ class CommentsManager extends Manager
     public function approve($id)
     {
         // Connexion à la BDD
-        $bdd = parent::bddConnect();
+        $bdd = bdd_connect();
 
         $request = $bdd->prepare('UPDATE comments SET alert = FALSE WHERE id = :id');
         $request->bindValue(':id', $id, PDO::PARAM_INT);

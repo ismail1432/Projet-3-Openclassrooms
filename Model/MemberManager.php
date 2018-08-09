@@ -1,12 +1,14 @@
 <?php
+require_once('./config-dist.php');
+require_once('./Model/Manager.php');
 // Manager de la classe Member
-class MemberManager extends Manager
+class MemberManager
 {
     // Méthode d'ajout d'un nouveaux membre
     public function addMember($member)
     {
         // Connexion à la BDD
-        $bdd = parent::bddConnect();
+        $bdd = bdd_connect();
 
         // Enregistre le nouveau membre
         $request = $bdd->prepare('INSERT INTO members(emailAdress, password, status) VALUES(:emailAdress, :password, :status)');
@@ -23,7 +25,7 @@ class MemberManager extends Manager
     public function connectionMember($member)
     {
         // Connexion à la BDD
-        $bdd = parent::bddConnect();
+        $bdd = bdd_connect();
 
         $request = $bdd->prepare('SELECT id, emailAdress, password, status FROM members WHERE emailAdress = :emailAdress');
         $request->bindValue(':emailAdress', $member->emailAdress());
