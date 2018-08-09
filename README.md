@@ -6,7 +6,7 @@ Créez un blog pour un écrivain.
 ## Installation
 
 - Importez la base de donnée ["BDD.sql"](https://github.com/Zalatis/Projet-3-Openclassrooms/blob/dev/BDD/BDD.sql) qui est dans le dossier "BDD"
-- Modifiez le fichier ["config-dist.php"](https://github.com/Zalatis/Projet-3-Openclassrooms/blob/dev/config-dist.php)
+- Modifiez le fichier ["config-dist.php"](https://github.com/Zalatis/Projet-3-Openclassrooms/blob/dev/config-dist.php) avec vos identifiants de connexion à la Base de donnée.
 
 ## Énoncé
 
